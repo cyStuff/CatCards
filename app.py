@@ -9,12 +9,28 @@ with open('KEYFILE', 'r') as f:
 db = SQLAlchemy(app)
 
 class User(UserMixin, db.Model):
-	id = db.Column(db.Integer, primary_key=True)
+	id = db.Column(db.BigInteger, primary_key=True)
 	username = db.Column(db.String(40), unique=True, nullable=False)
 	password = db.Column(db.String(40), nullable=False)
-	age = db.Column(db.Integer, nullable=False)
+	
+# types: rock, fire, water, air, leaf
+# rarity: 0 common, 1 uncommon, 2 rare, 3 epic, 4 legendary
+class Cat(db.Model):
+	id = db.Column(db.BigInteger, primary_key=True)
+	user_id = db.Column(db.BigInteger, db.ForeignKey('user.id'), nullable=False)
 	name = db.Column(db.String(40), nullable=False)
+	# can just retrieve from the json file
+	#strength = db.Column(db.SmallInteger, nullable=False)
+	#modifier = db.Column(db.SmallInteger, nullable=False)
+	#health = db.Column(db.SmallInteger, nullable=False)
+	#type = db.Column(db.String(15), nullable=False)
+	#rarity = db.Column(db.SmallInteger, nullable=False)
+	#info = db.Column(db.String(200), nullable=False)
 
+	count = db.Column(db.Integer, nullable=False)
+
+
+"""
 login_manager = LoginManager(app)
 login_manager.init_app(app)
 
@@ -85,5 +101,5 @@ def update():
 def read():
 	logout_user()
 	return redirect('/')
-
+"""
 app.run()

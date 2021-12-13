@@ -1,0 +1,58 @@
+{
+	"Rockitten": {
+		"strength": 4,
+		"health": 2,
+		"type": "rock",
+		"rarity": 0,
+		"info": "A small stony kitten. Not very strong, but can be found almost anywhere."
+	},
+	"Fireling": {
+		"strength": 4,
+		"health": 2,
+		"type": "fire",
+		"rarity": 0,
+		"info": "A feisty little thing. Stay away or be burned! (or bitten)"
+	},
+	"Puddles": {
+		"strength": 4,
+		"health": 2,
+		"type": "fire",
+		"rarity": 0,
+		"info": "Most cat's don't like water, and this one doesn't too! Unfortunately, it is constantly wet."
+	},
+	"Furrball": {
+		"strength": 4,
+		"health": 2,
+		"type": "air",
+		"rarity": 0,
+		"info": "It's hard to tell if this kitten even exists, or if it is a giant ball of fur. It has so much hair it drifts away in a ligth breeze."
+	},
+	"Daffodill": {
+		"strength": 4,
+		"health": 2,
+		"type": "leaf",
+		"rarity": 0,
+		"info": "Always rummaging arround in the garden, this little kitten always has a flower on it's head."
+	},
+	"Rockhead": {
+		"strength": 6,
+		"health": 3,
+		"type": "rock",
+		"rarity": 1,
+		"info": "With a head literally made of stone, the headbutts from this cat can be deadly."
+	},
+	"Tailblaze": {
+		"strength": 6,
+		"health": 3,
+		"type": "fire",
+		"rarity": 1,
+		"info": "Instead of a tail, this cat has a small plume of fire. It is rumored that it's fur is increadibly soft, but no one knows for sure."
+	},
+	"Waterpaw": {
+		"strength": 6,
+		"health": 3,
+		"type": "water",
+		"rarity": 1,
+		"info":
+	}
+}
