@@ -1,0 +1,88 @@
+html body {
+	margin: 0px;
+	padding: 0px;
+	height:  100%;
+}
+
+.navbar {
+	display: inline-flex;
+	width: 100%;
+	background: #efefef;
+	padding: 0px;
+	margin: 0px;
+}
+
+.navbar div {
+	padding:  0.75em;
+}
+
+.navbar div:hover {
+	background: #e0e0e0;
+}
+
+.error {
+	color: darkred;
+}
+
+.border {
+	margin:  3em;
+}
+.container {
+	width: 100%;
+	display:  inline-flex;
+	flex-direction:  row;
+	flex-wrap:  wrap;
+	align-items:  stretch;
+}
+
+.rock {
+	color:  #66584f;
+}
+
+.fire {
+	color: #963623;
+}
+
+.water {
+	color: #284ca1;
+}
+
+.air {
+	color: #76b3c2;
+}
+
+.leaf {
+	color: #469133;
+}
+
+
+
+.card {
+	position:  relative;
+	border-radius:  10px;
+	background:  #efefef;
+	width:  15em;
+	margin:  0.5em;
+}
+.card h1 {
+	padding: 1px;
+	text-align: center;
+}
+.card div {
+	border-radius: 10px;
+	margin:  0.5em;
+	padding-left:  0.75em;
+	padding-right:  0.75em;
+	padding-top:  0.25em;
+	padding-bottom:  0.25em;
+	margin-bottom: 2.75em;
+	background: #e0e0e0;
+}
+.card img {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width:  calc(50% - 0.5em);
+	height:  2.5em;
+	padding: 0.25em;
+}

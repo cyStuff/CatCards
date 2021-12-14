@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head hidden=true>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+	{% block head %}
+	<title>Cat Cards</title>
+	{% endblock %}
+</head>
+<body>
+	<div class="navbar">
+		<a href="/"><div>Home</div></a>
+		{% if current_user.is_authenticated %}
+		<a href="/logout"><div>Logout</div></a>
+		{% else %}
+		<a href="/login"><div>Login</div></a>
+		{% endif %}
+	</div>
+	{% block content %}
+	{% endblock %}
+</body>
+</html>

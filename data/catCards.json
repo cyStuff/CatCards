@@ -34,6 +34,7 @@
 		"rarity": 0,
 		"info": "Always rummaging arround in the garden, this little kitten always has a flower on it's head."
 	},
+	
 	"Rockhead": {
 		"strength": 6,
 		"health": 3,
@@ -53,6 +54,29 @@
 		"health": 3,
 		"type": "water",
 		"rarity": 1,
-		"info":
+		"info": "This cat loves running through small puddles. Luckily, it produced water from it;s paws so it can have a puddle anywhere!"
+	},
+
+
+	"DEFAULT2": {
+		"strength": 8,
+		"health": 4,
+		"type": "rock",
+		"rarity": 2,
+		"info": "TEST 2"
+	},
+	"DEFAULT3": {
+		"strength": 12,
+		"health": 6,
+		"type": "rock",
+		"rarity": 3,
+		"info": "TEST 3"
+	},
+	"DEFAULT4": {
+		"strength": 20,
+		"health": 10,
+		"type": "rock",
+		"rarity": 4,
+		"info": "TEST 4"
 	}
 }

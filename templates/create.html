@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head %}
+{{super()}}
+<script type="text/javascript" src="static/passCheck.js"></script>
+{% endblock %}
+{% block content %}
+<h1>Create</h1>
+<form action="/create" method="POST">
+	<span>Username: </span><input type="text" id="username" name="username"><br>
+	<span>Password: </span><input type="password" id="password" name="password">
+	<span hidden="true" id="checkmark1">&#10004</span><span hidden="true" id="short">Too short</span><br>
+	<span>Verify Password: </span><input type="password" id="passcheck" name="passcheck">
+	<span hidden="true" id="checkmark2">&#10004</span><span hidden="true" id="X">X</span><br>
+	<input type="submit" value="Create!" id="submit" disabled="true">
+</form>
+<p class="error">{{error}}</p>
+<p>Laready have an account? click <a href="/login">here</a>!</p>
+{% endblock %}
