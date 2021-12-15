@@ -20,5 +20,5 @@ window.onload = () => {
 			var seconds = Math.floor(diff % 60);
 			timer.innerHTML = hours.toString().padStart(2, '0')+':'+minutes.toString().padStart(2, '0')+':'+seconds.toString().padStart(2, '0');
 		}
-	}, 1000); // out of sync with server to have better user experience.
+	}, 1001); // out of sync with server to have better user experience.
 };
