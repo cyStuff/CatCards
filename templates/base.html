@@ -6,7 +6,9 @@
 	<script type="text/javascript" src="/static/counter.js"></script>
 	{% block head %}
 	<title>Cat Cards</title>
+	{% if current_user.is_authenticated %}
 	<data id="pack_time" hidden="true">{{get_pack_time()}}</data>
+	{% endif %}
 	{% endblock %}
 </head>
 <body>
