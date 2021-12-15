@@ -1,10 +1,10 @@
 # CatCards
 
 ### hosted on [app.restingties.com](https://app.restingties.com)
-### [github](https://github.com/cyStuff/webapp)
+### [github](https://github.com/cyStuff/CatCards)
 
 ## Requirements
-requres flask, flask_login, flask_sqlalchemy, and passlib.
+requres flask, flask_login, flask_sqlalchemy, and passlib.  
 `pip install flask flask_login flask_sqlalchemy passlib`
 
 ## Information
