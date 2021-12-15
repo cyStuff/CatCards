@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="border">
+		<div class="container">
+			<div class="card">
+				<h1 class="{{json[0].type}}">{{cat[0].name}}</h1>
+				<div>
+					<span>Strength: d{{json[0].strength}}{% if cat[0].modifier > 0 %} + {{cat[0].modifier}}{% endif %}</span><br>
+					<span>Health: {{json[0].health}}{% if cat[0].hmodifier > 0 %} + {{cat[0].hmodifier}}{% endif %}</span><br>
+					<span>Type: <span class="{{json[0].type}}">{{json[0].type}}</span></span><br><br>
+					<p>{{json[0].info}}</p>
+				</div>
+				<img src="/static/star{{json[0].rarity+1}}.svg">
+			</div>
+			<div class="arrow_box">
+				<span></span>
+				<img src="/static/arrow.png">
+			</div>
+			<div class="card">
+				<h1 class="{{json[1].type}}">{{cat[1].name}}</h1>
+				<div>
+					<span>Strength: d{{json[1].strength}}{% if cat[1].modifier > 0 %} + {{cat[1].modifier}}{% endif %}</span><br>
+					<span>Health: {{json[1].health}}{% if cat[1].hmodifier > 0 %} + {{cat[1].hmodifier}}{% endif %}</span><br>
+					<span>Type: <span class="{{json[1].type}}">{{json[1].type}}</span></span><br><br>
+					<p>{{json[1].info}}</p>
+				</div>
+				<img src="/static/star{{json[1].rarity+1}}.svg">
+			</div>
+		</div>
+		<div class="buttons">
+			<form action="/upgrade/{{cat[0].id}}" method="POST">
+				<a class="button" href="#" onclick="this.parentNode.submit()">
+					<div><span>Yes</span></div>
+				</a>
+			</form>
+			<a class="button" href="/inventory">
+				<div><span>No</span></div>
+			</a>
+		</div>
+	</div>
+{% endblock %}

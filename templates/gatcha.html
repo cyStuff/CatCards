@@ -6,12 +6,12 @@
 			<div class="card">
 				<h1 class="{{cat.type}}">{{name}}</h1>
 				<div>
-					<span>Strength: {{cat.strength}}</span><br>
+					<span>Strength: d{{cat.strength}}</span><br>
 					<span>Health: {{cat.health}}</span><br>
 					<span>Type: <span class="{{cat.type}}">{{cat.type}}</span></span><br><br>
 					<p>{{cat.info}}</p>
 				</div>
-				<img src="static/star{{cat.rarity+1}}.svg">
+				<img src="/static/star{{cat.rarity+1}}.svg">
 			</div>
 			{% endfor %}
 		</div>

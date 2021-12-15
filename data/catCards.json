@@ -16,7 +16,7 @@
 	"Puddles": {
 		"strength": 4,
 		"health": 2,
-		"type": "fire",
+		"type": "water",
 		"rarity": 0,
 		"info": "Most cat's don't like water, and this one doesn't too! Unfortunately, it is constantly wet."
 	},

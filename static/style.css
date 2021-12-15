@@ -24,6 +24,10 @@ html body {
 	color: darkred;
 }
 
+.good {
+	color: #7dde49;
+}
+
 .border {
 	margin:  3em;
 }
@@ -56,6 +60,29 @@ html body {
 }
 
 
+.buttons {
+	background: #efefef;
+	border-radius: 10px;
+	display: inline-flex;
+}
+
+.button {
+	text-decoration: none;
+}
+
+.button div {
+	border-radius: 10px;
+	padding: 1em;
+}
+
+.button div:hover {
+	background: #e0e0e0;
+}
+
+.button div span {
+	color: #909090;
+}
+
 
 .card {
 	position:  relative;
@@ -85,4 +112,33 @@ html body {
 	width:  calc(50% - 0.5em);
 	height:  2.5em;
 	padding: 0.25em;
+}
+
+.card span.count {
+	position:  absolute;
+	right: 0;
+	bottom: 0;
+	padding: 0.25em;
+	padding-bottom: 0.75em;
+}
+
+.card span.count a {
+	padding-right: 0.5em;
+	text-decoration: none;
+	color: #909090;
+}
+
+.card span.count a:hover {
+	color: #c0c050;
+}
+
+.arrow_box {
+    position: relative;
+    width: 5em;
+}
+
+.arrow_box img {
+    position: absolute;
+    top: calc(50% - 2.5em);
+    width: 5em;
 }

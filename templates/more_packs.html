@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="border">
+		<p>
+			You have run out of card packs! You will get a new pack every 5 minutes.
+		</p>
+		<p>
+			Your next pack drop is in <span id="time">{{time}}</span>.
+		</p>
+	</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="border">
+		<div class="container">
+			{% for cat, json in data %}
+			<div class="card">
+				<h1 class="{{json.type}}">{{cat.name}}</h1>
+				<div>
+					<span>Strength: d{{json.strength}}{% if cat.modifier > 0 %} + {{cat.modifier}}{% endif %}</span><br>
+					<span>Health: {{json.health}}{% if cat.hmodifier > 0 %} + {{cat.hmodifier}}{% endif %}</span><br>
+					<span>Type: <span class="{{json.type}}">{{json.type}}</span></span><br><br>
+					<p>{{json.info}}</p>
+				</div>
+				<img src="/static/star{{json.rarity+1}}.svg">
+				<span class="count"><a class="upgrade" {% if cat.count < upgrade_count %}hidden="true"{% endif %} href="/upgrade/{{cat.id}}">upgrade!</a>{{cat.count}}</span>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

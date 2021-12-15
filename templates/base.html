@@ -2,9 +2,11 @@
 <html>
 <head hidden=true>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="static/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<script type="text/javascript" src="/static/counter.js"></script>
 	{% block head %}
 	<title>Cat Cards</title>
+	<data id="pack_time" hidden="true">{{get_pack_time()}}</data>
 	{% endblock %}
 </head>
 <body>
@@ -12,6 +14,7 @@
 		<a href="/"><div>Home</div></a>
 		{% if current_user.is_authenticated %}
 		<a href="/logout"><div>Logout</div></a>
+		<a href="/gatcha"><div>Packs (<span id="packs">{{current_user.pack_count}}</span>)</div></a>
 		{% else %}
 		<a href="/login"><div>Login</div></a>
 		{% endif %}
