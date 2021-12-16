@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+	<div class="header">
+		<h1>Inventory</h1>
+		<p>
+			This is where all of your cards are kept. the count is shown in the bottom right corner. {% if data|length == 0%} To get cards click on the packs button above.{% endif %}
+		</p>
+	</div>
     <div class="border">
 		<div class="container">
 			{% for cat, json in data %}

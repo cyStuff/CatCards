@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+	<div class="header">
+		<h1>Upgrade</h1>
+		<p>
+			This is how you upgrade your cards to make them stronger! Each time you upgrade, 5 cards will be consumed to create the new card. Clicking all will upgrade all of the current type of card.
+		</p>
+	</div>
     <div class="border">
 		<div class="container">
 			<div class="card">
@@ -31,6 +37,11 @@
 			<form action="/upgrade/{{cat[0].id}}" method="POST">
 				<a class="button" href="#" onclick="this.parentNode.submit()">
 					<div><span>Yes</span></div>
+				</a>
+			</form>
+			<form action="/upgrade-all/{{cat[0].id}}" method="POST">
+				<a class="button" href="#" onclick="this.parentNode.submit()">
+					<div><span>All</span></div>
 				</a>
 			</form>
 			<a class="button" href="/inventory">

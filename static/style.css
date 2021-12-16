@@ -20,6 +20,10 @@ html body {
 	background: #e0e0e0;
 }
 
+.header {
+	text-align: center;
+}
+
 .error {
 	color: darkred;
 }

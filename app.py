@@ -147,8 +147,9 @@ def inventory():
 @app.route('/gatcha')
 @login_required
 def gatcha():
+	time=get_pack_time()
 	if (current_user.pack_count == 0):
-		return render_template('more_packs.html', time=get_pack_time())
+		return render_template('more_packs.html', time=time)
 	cats = cc.lootbox()
 	[add_cat(current_user.id, cat) for cat in cats]
 	current_user.pack_count -= 1
@@ -172,52 +173,32 @@ def upgrade(id):
 		new_cat.modifier += 1
 	return render_template('upgrade.html', cat=[cat,new_cat], json=[cc.get_cat_json(cat.name) for cat in [cat, new_cat]])
 
-"""
+@app.route('/upgrade-all/<id>', methods=['POST'])
+@login_required
+def upgrade_all(id):
+	cat = Cat.query.filter_by(id=id).first()
+	while cat.count >= 5:
+		upgrade_cat(current_user.id, id)
+	db.session.commit()
+	return redirect('/inventory')
+
+@app.route('/cheat', methods=['POST'])
+@login_required
+def cheat():
+	for i in range(1000):
+		cats = cc.lootbox()
+		[add_cat(current_user.id, cat) for cat in cats]
+	db.session.commit()
+	return redirect('/inventory')
+
 def error401(e):
-	return render_template('401.html')
+	return redirect('/login')
 app.register_error_handler(401, error401)
 
 def error404(e):
 	return render_template('404.html')
 app.register_error_handler(404, error404)
 
-@app.route('/')
-def index():
-	return render_template('home.html')
-
-@app.route('/create', methods=['GET', 'POST'])
-def create():
-	if request.method == 'POST':
-		username = request.form['username']
-		password = request.form['password']
-		user = User.query.filter_by(username=username).first()
-		if user is not None:
-			return render_template('create.html', error="Error: user already exists.")
-		user = User(username=username, password=password, name=request.form['name'], age=request.form['age'])
-		db.session.add(user)
-		db.session.commit()
-		login_user(user)
-		return redirect('/')
-	return render_template('create.html')
-
-@app.route('/view_all')
-@login_required
-def view():
-	users = User.query.all()
-	lst = [(x.name, x.age, x.username, x.password) for x in users]
-	return render_template('view.html', lst=lst)
-
-@app.route('/update', methods=['GET', 'POST'])
-@login_required
-def update():
-	if request.method == 'POST':
-		if current_user.password != request.form['password']:
-			return render_template('update.html', error="Error: the password is incorrect.")
-		current_user.password = request.form['new']
-		db.session.commit()
-		return redirect('/')
-	return render_template('update.html')
-"""
 
 if __name__ == "__main__":
 	app.run()
