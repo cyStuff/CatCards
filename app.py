@@ -165,7 +165,7 @@ def upgrade(id):
 		return redirect('/inventory')
 	cat = Cat.query.filter_by(id=id).first()
 	if not cat:
-		return "ERROR"
+		return redirect('/inventory')
 	new_cat = copy.copy(cat)
 	if (cat.modifier > cat.hmodifier):
 		new_cat.hmodifier += 1
