@@ -1,3 +1,4 @@
 /KEYFILE
 /__pycache__
 /database.db
+/wsgi.py
