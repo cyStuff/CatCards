@@ -185,7 +185,7 @@ def upgrade_all(id):
 @app.route('/cheat', methods=['POST'])
 @login_required
 def cheat():
-	for i in range(1000):
+	for i in range(10):
 		cats = cc.lootbox()
 		[add_cat(current_user.id, cat) for cat in cats]
 	db.session.commit()
